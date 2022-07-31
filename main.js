@@ -2,7 +2,7 @@ import { products } from "./products.js";
 
 // get element from DOM
 const input = document.querySelector(".form-input");
-const searchTitle = document.querySelector(".search-item");
+const searchTitle = document.querySelectorAll(".search-item__link");
 const productsContainer = document.querySelector(".container");
 
 let productsFilter = [];
@@ -36,9 +36,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 input.addEventListener("input", (e) => {
   productsFilter = products.filter((p) => {
-   return p.title.startsWith(e.target.value.toLowerCase());
+    return p.title.toLowerCase().startsWith(e.target.value.toLowerCase());
   });
-  console.log(productsFilter)
+  console.log(productsFilter);
   productsContainer.innerHTML = "";
   productsFilter.forEach((p) => renderProducts(p));
+});
+
+searchTitle.forEach((title) => {
+  title.addEventListener("click", (e) => {
+    const filterdTitle = e.target.dataset.search;
+    const filteredProducts = products.filter((p) => {
+      return p.title.toLowerCase().startsWith(filterdTitle.toLowerCase());
+    });
+    productsContainer.innerHTML = "";
+    filteredProducts.forEach((p) => renderProducts(p));
+  });
 });
