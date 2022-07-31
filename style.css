@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "bold";
+  src: url("assets/font/IRANSansWeb\(FaNum\)_Bold.eot") format("eot"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Bold.woff") format("woff"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "light";
+  src: url("assets/font/IRANSansWeb\(FaNum\)_Light.eot") format("eot"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Light.woff") format("woff"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "medium";
+  src: url("assets/font/IRANSansWeb\(FaNum\)_Medium.eot") format("eot"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Medium.woff") format("woff"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Medium.woff2") format("woff2");
+}
+
+:root {
+  --primaryColor: #6d28d9;
+  --secondaryColor: #ede9fe;
+  /* --primaryColor: #4338CA;
+    --secondaryColor: #E0E7FF; */
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+}
+
+/*     init     */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "medium";
+}
+
+body{
+    background-color: #f6f6f6;
+}
+
+
+.header{
+    background-color: #e0e7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    gap: 5rem;
+    margin-bottom: 8rem;
+}
+.header-title{
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+.form-input{
+    border: none;
+    outline: none;
+    width: 25rem;
+    padding: 1rem 3.5rem;
+    border-radius: .5rem;
+    transition: all .4s;
+}
+.form-input:focus{
+    border: 2px solid #6d28d9;
+}
+.search-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8rem;
+    font-size: 1.8rem;
+}
+.search-item__link{
+    text-decoration: none;
+    display: inline-block;
+    padding: .5rem 1.5rem;
+    border: 2px solid #6d28d9;
+    color: #6d28d9;
+    border-radius: .7rem;
+}
+.container{
+    margin: 0 auto;
+    width: 130rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    justify-items: center;
+}
+.product{
+    background-color: #fff;
+    padding: 2rem;
+    font-size: 1.7rem;
+}
+.product-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price{
+    color: #6d28d9;
+}
