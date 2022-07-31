@@ -5,6 +5,8 @@ const input = document.querySelector(".form-input");
 const searchTitle = document.querySelector(".search-item");
 const productsContainer = document.querySelector(".container");
 
+let productsFilter = [];
+
 const search = {
   filterSearch: "",
 };
@@ -25,9 +27,18 @@ const renderProducts = function (product) {
           </div>
         </div>
     `;
-    productsContainer.insertAdjacentHTML("afterbegin",html)
+  productsContainer.insertAdjacentHTML("afterbegin", html);
 };
 
 document.addEventListener("DOMContentLoaded", (e) => {
   products.forEach((p) => renderProducts(p));
+});
+
+input.addEventListener("input", (e) => {
+  productsFilter = products.filter((p) => {
+   return p.title.startsWith(e.target.value.toLowerCase());
+  });
+  console.log(productsFilter)
+  productsContainer.innerHTML = "";
+  productsFilter.forEach((p) => renderProducts(p));
 });
